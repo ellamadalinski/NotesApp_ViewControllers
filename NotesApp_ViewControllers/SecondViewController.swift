@@ -18,6 +18,13 @@ class SecondViewController: UIViewController {
         print("2nd VC loaded")
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        //if moving backwards
+        if isMovingFromParent{
+            performSegue(withIdentifier: "unwindTo1st", sender: nil)
+        }
+    }
+    
 
     @IBAction func buttonAction(_ sender: UIButton) {
         view.backgroundColor = UIColor.green

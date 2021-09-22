@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var homeLabelOutlet: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("1st VC loaded")
@@ -25,6 +27,8 @@ class ViewController: UIViewController {
     
     @IBAction func unwind(_ seg: UIStoryboardSegue){
         print("Unwinding to 1st VC")
+        let svc = seg.source as! SecondViewController
+        homeLabelOutlet.text =  svc.textFieldOutlet.text!
     }
     
     
